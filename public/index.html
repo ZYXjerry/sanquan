@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三全食品 · 全链路品质溯源平台</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ========== 查询页（精美卡片式） ========== -->
+<div class="page" id="page-search">
+  <div class="search-card">
+    <div class="logo-area">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h1>三全食品 · 全链路品质溯源</h1>
+      <p>Traceability from Farm to Table · 看得见的安全</p>
+    </div>
+    <div class="input-group">
+      <i class="fa-solid fa-barcode"></i>
+      <input type="text" id="codeInput" placeholder="请输入产品溯源编码：SQ-SJ-20260406-0001">
+      <button onclick="doSearch()">
+        <i class="fa-solid fa-magnifying-glass"></i> 查询溯源信息
+      </button>
+    </div>
+    <div class="tips">本平台为项目展示Demo，数据仅用于演示</div>
+  </div>
+</div>
+
+<!-- ========== 溯源结果页（高端展示版） ========== -->
+<div class="page hidden" id="page-result">
+  <div class="header">
+    <div class="title">
+      <i class="fa-solid fa-shield-halved"></i>
+      <span>三全食品 · 全链路品质溯源</span>
+    </div>
+    <button class="back-btn" onclick="backSearch()">
+      <i class="fa-solid fa-arrow-left"></i> 返回查询
+    </button>
+  </div>
+
+  <div class="container">
+    <!-- 产品信息卡片 -->
+    <div class="card product-card">
+      <div class="card-title">
+        <i class="fa-solid fa-box-sealed"></i> 产品基础信息
+      </div>
+      <div class="product-info-grid" id="productInfo"></div>
+    </div>
+
+    <!-- 溯源环节 -->
+    <div class="card steps-card">
+      <div class="card-title">
+        <i class="fa-solid fa-route"></i> 全生命周期溯源流程
+      </div>
+      <div class="steps-grid" id="stepsGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 详情弹窗（精美版） ========== -->
+<div class="modal hidden" id="modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modalTitle"></h3>
+      <button class="close-btn" onclick="closeModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
